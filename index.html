@@ -1,179 +1,837 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurora e Roberto | Wedding</title>
+  <meta name="description" content="Sito matrimonio di Lucia e Marco" />
+  <style>
+    :root{
+      --bg: #f7f2eb;
+      --bg-soft: #fcfaf7;
+      --card: rgba(255,255,255,0.72);
+      --text: #3f3a35;
+      --muted: #7b746c;
+      --line: rgba(110, 98, 88, 0.18);
+      --accent: #8f9b7a;
+      --accent-dark: #717d5f;
+      --shadow: 0 12px 36px rgba(70, 56, 42, 0.10);
+      --radius: 24px;
+      --max: 1080px;
+    }
 
-<title>Aurora e Roberto</title>
+    * { box-sizing: border-box; }
 
-<style>
+    html { scroll-behavior: smooth; }
 
-body{
-font-family: Arial, sans-serif;
-margin:0;
-background:#faf7f2;
-color:#333;
-text-align:center;
-}
+    body{
+      margin:0;
+      font-family: "Georgia", "Times New Roman", serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.7), transparent 35%),
+        linear-gradient(180deg, #f9f5ef 0%, #f5eee5 100%);
+      line-height: 1.6;
+    }
 
-.container{
-max-width:900px;
-margin:auto;
-padding:40px 20px;
-}
+    img{
+      max-width:100%;
+      display:block;
+      border-radius:18px;
+    }
 
-h1{
-font-size:48px;
-margin-bottom:10px;
-}
+    a{
+      color: inherit;
+      text-decoration: none;
+    }
 
-h2{
-margin-top:50px;
-}
+    .container{
+      width:min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
 
-.date{
-font-size:20px;
-color:#777;
-}
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(247, 242, 235, 0.78);
+      border-bottom: 1px solid var(--line);
+    }
 
-.lang{
-position:fixed;
-top:20px;
-right:20px;
-}
+    .topbar-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      min-height:72px;
+    }
 
-button{
-padding:8px 14px;
-margin-left:5px;
-border:none;
-background:#333;
-color:white;
-cursor:pointer;
-}
+    .brand{
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
 
-.section{
-margin-top:60px;
-}
+    .nav{
+      display:flex;
+      gap:18px;
+      flex-wrap: wrap;
+      justify-content:center;
+      font-size:0.96rem;
+      color: var(--muted);
+    }
 
-.card{
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
-margin-top:20px;
-}
+    .nav a:hover{
+      color: var(--text);
+    }
 
-.map{
-margin-top:20px;
-}
+    .lang-switch{
+      display:flex;
+      gap:8px;
+    }
 
-</style>
+    .lang-btn{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,0.55);
+      color: var(--text);
+      padding:10px 14px;
+      border-radius:999px;
+      cursor:pointer;
+      font-size:0.92rem;
+      transition: 0.2s ease;
+    }
 
+    .lang-btn:hover,
+    .lang-btn.active{
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .hero{
+      padding: 72px 0 48px;
+    }
+
+    .hero-card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.62));
+      border:1px solid rgba(255,255,255,0.65);
+      box-shadow: var(--shadow);
+      border-radius: 32px;
+      overflow: hidden;
+      display:grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      min-height: 620px;
+    }
+
+    .hero-copy{
+      padding: 64px 56px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .eyebrow{
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 18px;
+    }
+
+    .names{
+      font-size: clamp(2.9rem, 7vw, 5.8rem);
+      line-height: 0.95;
+      margin: 0 0 18px;
+      font-weight: 400;
+    }
+
+    .subtitle{
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 44ch;
+      margin: 0 0 26px;
+    }
+
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom: 26px;
+    }
+
+    .pill{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,0.55);
+      padding:10px 14px;
+      border-radius:999px;
+      color: var(--muted);
+      font-size:0.95rem;
+    }
+
+    .cta-row{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top: 8px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 22px;
+      border-radius:999px;
+      border:1px solid transparent;
+      font-size:1rem;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary{
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover{
+      background: var(--accent-dark);
+    }
+
+    .btn-secondary{
+      background: rgba(255,255,255,0.5);
+      color: var(--text);
+      border-color: var(--line);
+    }
+
+    .btn-secondary:hover{
+      background: rgba(255,255,255,0.85);
+    }
+
+    .hero-photo{
+      min-height: 380px;
+      background:
+        linear-gradient(rgba(75,65,55,0.12), rgba(75,65,55,0.12)),
+        url("https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80")
+        center/cover no-repeat;
+      position: relative;
+    }
+
+    .countdown-box{
+      position:absolute;
+      right:24px;
+      bottom:24px;
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: blur(8px);
+      border:1px solid rgba(255,255,255,0.6);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      min-width: 250px;
+    }
+
+    .countdown-title{
+      color: var(--muted);
+      font-size:0.9rem;
+      margin-bottom:12px;
+      text-transform:uppercase;
+      letter-spacing:0.12em;
+    }
+
+    .countdown-grid{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:10px;
+      text-align:center;
+    }
+
+    .count-item{
+      background: var(--bg-soft);
+      border-radius: 16px;
+      padding: 12px 6px;
+      border:1px solid var(--line);
+    }
+
+    .count-num{
+      font-size: 1.4rem;
+      line-height:1;
+      margin-bottom:6px;
+    }
+
+    .count-label{
+      font-size:0.72rem;
+      color: var(--muted);
+      text-transform:uppercase;
+      letter-spacing:0.08em;
+    }
+
+    section{
+      padding: 28px 0;
+    }
+
+    .section-head{
+      text-align:center;
+      margin-bottom: 26px;
+    }
+
+    .section-kicker{
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-bottom: 8px;
+    }
+
+    .section-title{
+      margin:0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+    }
+
+    .section-text{
+      color: var(--muted);
+      max-width: 60ch;
+      margin: 10px auto 0;
+      font-size: 1.02rem;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:22px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap:22px;
+    }
+
+    .card{
+      background: var(--card);
+      border:1px solid rgba(255,255,255,0.62);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 28px;
+      backdrop-filter: blur(10px);
+    }
+
+    .story-text{
+      font-size: 1.04rem;
+      color: var(--text);
+    }
+
+    .timeline{
+      display:grid;
+      gap:14px;
+    }
+
+    .timeline-item{
+      display:grid;
+      grid-template-columns: 92px 1fr;
+      gap:16px;
+      align-items:start;
+      padding:16px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .timeline-item:last-child{
+      border-bottom:none;
+      padding-bottom:0;
+    }
+
+    .timeline-time{
+      font-size:1.05rem;
+      color: var(--accent-dark);
+    }
+
+    .timeline-title{
+      margin:0 0 4px;
+      font-size:1.1rem;
+    }
+
+    .timeline-desc{
+      margin:0;
+      color: var(--muted);
+      font-size:0.97rem;
+    }
+
+    .location-name{
+      font-size:1.35rem;
+      margin:0 0 10px;
+    }
+
+    .muted{
+      color: var(--muted);
+    }
+
+    .info-list{
+      display:grid;
+      gap:14px;
+      margin-top: 12px;
+    }
+
+    .info-row{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns: 1.1fr 0.9fr 1fr;
+      gap:18px;
+    }
+
+    .gallery img{
+      height: 280px;
+      width:100%;
+      object-fit: cover;
+      box-shadow: var(--shadow);
+    }
+
+    .rsvp-highlight{
+      font-size:1.05rem;
+      color: var(--muted);
+      margin-bottom:18px;
+    }
+
+    .gift-box{
+      text-align:center;
+    }
+
+    .footer{
+      padding: 48px 0 64px;
+      text-align:center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 960px){
+      .hero-card,
+      .grid-2,
+      .grid-3,
+      .gallery{
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy{
+        padding: 46px 26px;
+      }
+
+      .hero-photo{
+        min-height: 420px;
+      }
+
+      .countdown-box{
+        left:20px;
+        right:20px;
+        bottom:20px;
+        min-width: auto;
+      }
+
+      .topbar-inner{
+        flex-direction:column;
+        padding:12px 0;
+      }
+
+      .timeline-item{
+        grid-template-columns: 1fr;
+        gap:8px;
+      }
+    }
+
+    @media (max-width: 640px){
+      .hero{
+        padding-top: 26px;
+      }
+
+      .names{
+        font-size: 3.2rem;
+      }
+
+      .countdown-grid{
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav{
+        gap:12px;
+        font-size:0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">Aurora e ROberto</div>
 
-<div class="lang">
-<button onclick="setLang('it')">IT</button>
-<button onclick="setLang('ro')">RO</button>
-</div>
+      <nav class="nav">
+        <a href="#story" data-it="La nostra storia" data-ro="Povestea noastră">La nostra storia</a>
+        <a href="#day" data-it="Programma" data-ro="Program">Programma</a>
+        <a href="#location" data-it="Location" data-ro="Locație">Location</a>
+        <a href="#rsvp" data-it="Conferma presenza" data-ro="Confirmare prezență">Conferma presenza</a>
+        <a href="#info" data-it="Info utili" data-ro="Informații utile">Info utili</a>
+      </nav>
 
-<div class="container">
+      <div class="lang-switch">
+        <button class="lang-btn active" onclick="setLang('it', this)">IT</button>
+        <button class="lang-btn" onclick="setLang('ro', this)">RO</button>
+      </div>
+    </div>
+  </header>
 
-<h1>Aurora e Roberto</h1>
-<p class="date">8 Maggio 2027</p>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-copy">
+            <div class="eyebrow" data-it="Ci sposiamo" data-ro="Ne căsătorim">Ci sposiamo</div>
 
-<div class="section">
-<h2 data-it="Benvenuti" data-ro="Bine ați venit">Benvenuti</h2>
-<p data-it="Non vediamo l'ora di festeggiare con voi." 
-data-ro="Abia așteptăm să sărbătorim împreună cu voi.">
-Non vediamo l'ora di festeggiare con voi.
-</p>
-</div>
+            <h1 class="names">Aurora <span style="color:var(--accent)">&</span> Roberto</h1>
 
-<div class="section">
-<h2 data-it="Programma della giornata" data-ro="Programul zilei">
-Programma della giornata
-</h2>
+            <p class="subtitle"
+              data-it="Siamo felici di condividere con voi il giorno più bello della nostra vita."
+              data-ro="Suntem fericiți să împărtășim cu voi cea mai frumoasă zi din viața noastră.">
+              Siamo felici di condividere con voi il giorno più bello della nostra vita.
+            </p>
 
-<div class="card">
+            <div class="hero-meta">
+              <div class="pill">8 Maggio 2026</div>
+              <div class="pill" data-it="Villa Bellissima" data-ro="Villa Bellissima">Villa Cavalli</div>
+              <div class="pill" data-it="Roma, Italia" data-ro="Roma, Italia">Via Euganea Bresseo, 45, 35037 Teolo PD</div>
+            </div>
 
-<p data-it="15:30 Cerimonia" data-ro="15:30 Ceremonia">15:30 Cerimonia</p>
-<p data-it="17:30 Aperitivo" data-ro="17:30 Aperitiv">17:30 Aperitivo</p>
-<p data-it="19:30 Cena" data-ro="19:30 Cina">19:30 Cena</p>
-<p data-it="Dopo cena festa!" data-ro="Petrecere după cină!">Dopo cena festa!</p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#rsvp" data-it="Conferma presenza" data-ro="Confirmă prezența">Conferma presenza</a>
+              <a class="btn btn-secondary" href="#location" data-it="Vedi la location" data-ro="Vezi locația">Vedi la location</a>
+            </div>
+          </div>
 
-</div>
-</div>
+          <div class="hero-photo">
+            <div class="countdown-box">
+              <div class="countdown-title" data-it="Manca al matrimonio" data-ro="Până la nuntă au rămas">
+                Manca al matrimonio
+              </div>
 
-<div class="section">
-<h2 data-it="Location" data-ro="Locație">Location</h2>
+              <div class="countdown-grid">
+                <div class="count-item">
+                  <div class="count-num" id="days">0</div>
+                  <div class="count-label" data-it="Giorni" data-ro="Zile">Giorni</div>
+                </div>
+                <div class="count-item">
+                  <div class="count-num" id="hours">0</div>
+                  <div class="count-label" data-it="Ore" data-ro="Ore">Ore</div>
+                </div>
+                <div class="count-item">
+                  <div class="count-num" id="minutes">0</div>
+                  <div class="count-label" data-it="Minuti" data-ro="Minute">Minuti</div>
+                </div>
+                <div class="count-item">
+                  <div class="count-num" id="seconds">0</div>
+                  <div class="count-label" data-it="Secondi" data-ro="Secunde">Secondi</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<div class="card">
+    <section id="story">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker" data-it="Noi due" data-ro="Noi doi">Noi due</div>
+          <h2 class="section-title" data-it="La nostra storia" data-ro="Povestea noastră">La nostra storia</h2>
+          <p class="section-text"
+            data-it="Una piccola introduzione per condividere con voi il nostro percorso e la gioia di festeggiare insieme."
+            data-ro="O mică introducere pentru a împărtăși cu voi povestea noastră și bucuria de a sărbători împreună.">
+            Una piccola introduzione per condividere con voi il nostro percorso e la gioia di festeggiare insieme.
+          </p>
+        </div>
 
-<p>Villa Cavalli</p>
-<p>Via Roma 123</p>
+        <div class="grid-2">
+          <div class="card">
+            <p class="story-text"
+              data-it="Ci siamo incontrati, abbiamo iniziato a costruire ricordi insieme e oggi siamo felici di invitarvi a celebrare questo nuovo inizio con noi. Grazie per far parte della nostra storia."
+              data-ro="Ne-am întâlnit, am început să construim amintiri împreună, iar astăzi suntem fericiți să vă invităm să sărbătoriți alături de noi acest nou început. Vă mulțumim că faceți parte din povestea noastră.">
+              Ci siamo incontrati, abbiamo iniziato a costruire ricordi insieme e oggi siamo felici di invitarvi a celebrare questo nuovo inizio con noi. Grazie per far parte della nostra storia.
+            </p>
+          </div>
 
-<a href="https://maps.google.com" target="_blank"
-data-it="Apri su Google Maps"
-data-ro="Deschide în Google Maps">
-Apri su Google Maps
-</a>
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80" alt="Foto coppia" />
+          </div>
+        </div>
+      </div>
+    </section>
 
-</div>
-</div>
+    <section id="day">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker" data-it="La giornata" data-ro="Ziua evenimentului">La giornata</div>
+          <h2 class="section-title" data-it="Programma" data-ro="Program">Programma</h2>
+        </div>
 
-<div class="section">
-<h2 data-it="Conferma presenza" data-ro="Confirmare prezență">
-Conferma presenza
-</h2>
+        <div class="card timeline">
+          <div class="timeline-item">
+            <div class="timeline-time">15:30</div>
+            <div>
+              <h3 class="timeline-title" data-it="Cerimonia" data-ro="Ceremonia">Cerimonia</h3>
+              <p class="timeline-desc"
+                data-it="Inizio della cerimonia presso la location."
+                data-ro="Începutul ceremoniei la locație.">
+                Inizio della cerimonia presso la location.
+              </p>
+            </div>
+          </div>
 
-<div class="card">
+          <div class="timeline-item">
+            <div class="timeline-time">17:30</div>
+            <div>
+              <h3 class="timeline-title" data-it="Aperitivo" data-ro="Aperitiv">Aperitivo</h3>
+              <p class="timeline-desc"
+                data-it="Brindisi e momenti insieme all'aperto."
+                data-ro="Un toast și momente petrecute împreună în aer liber.">
+                Brindisi e momenti insieme all'aperto.
+              </p>
+            </div>
+          </div>
 
-<p data-it="Vi chiediamo gentilmente di confermare la vostra presenza entro il 1 giugno 2026."
-data-ro="Vă rugăm să confirmați prezența până la 1 iunie 2026.">
-Vi chiediamo gentilmente di confermare la vostra presenza entro il 1 giugno 2026.
-</p>
+          <div class="timeline-item">
+            <div class="timeline-time">19:30</div>
+            <div>
+              <h3 class="timeline-title" data-it="Cena" data-ro="Cină">Cena</h3>
+              <p class="timeline-desc"
+                data-it="Cena servita e festeggiamenti."
+                data-ro="Cină servită și momente de sărbătoare.">
+                Cena servita e festeggiamenti.
+              </p>
+            </div>
+          </div>
 
-<a href="#">
-RSVP
-</a>
+          <div class="timeline-item">
+            <div class="timeline-time">22:30</div>
+            <div>
+              <h3 class="timeline-title" data-it="Festa" data-ro="Petrecere">Festa</h3>
+              <p class="timeline-desc"
+                data-it="Musica, torta e balli fino a tardi."
+                data-ro="Muzică, tort și dans până târziu.">
+                Musica, torta e balli fino a tardi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</div>
-</div>
+    <section id="location">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker" data-it="Dove" data-ro="Unde">Dove</div>
+          <h2 class="section-title" data-it="Location" data-ro="Locație">Location</h2>
+        </div>
 
-<div class="section">
-<h2 data-it="Informazioni utili" data-ro="Informații utile">
-Informazioni utili
-</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3 class="location-name">Villa Bellissima</h3>
+            <p class="muted">Via Roma 123, 00100 Roma</p>
+            <p
+              data-it="Vi consigliamo di arrivare con qualche minuto di anticipo per accogliervi con calma."
+              data-ro="Vă recomandăm să ajungeți cu câteva minute mai devreme pentru a vă întâmpina în liniște.">
+              Vi consigliamo di arrivare con qualche minuto di anticipo per accogliervi con calma.
+            </p>
 
-<div class="card">
+            <div class="cta-row">
+              <a class="btn btn-primary" href="https://maps.google.com" target="_blank"
+                 data-it="Apri su Google Maps" data-ro="Deschide în Google Maps">
+                 Apri su Google Maps
+              </a>
+            </div>
+          </div>
 
-<p data-it="Dress code: elegante"
-data-ro="Dress code: elegant">
-Dress code: elegante
-</p>
+          <div class="card">
+            <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80" alt="Location matrimonio" />
+          </div>
+        </div>
+      </div>
+    </section>
 
-<p data-it="Parcheggio disponibile"
-data-ro="Parcare disponibilă">
-Parcheggio disponibile
-</p>
+    <section id="rsvp">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">RSVP</div>
+          <h2 class="section-title" data-it="Conferma la tua presenza" data-ro="Confirmă prezența ta">
+            Conferma la tua presenza
+          </h2>
+          <p class="section-text"
+            data-it="Vi chiediamo gentilmente di confermare entro il 1 giugno 2026."
+            data-ro="Vă rugăm să confirmați până la 1 iunie 2026.">
+            Vi chiediamo gentilmente di confermare entro il 1 giugno 2026.
+          </p>
+        </div>
 
-</div>
-</div>
+        <div class="card" style="text-align:center;">
+          <p class="rsvp-highlight"
+            data-it="Usa il pulsante qui sotto per comunicarci la tua partecipazione e eventuali intolleranze alimentari."
+            data-ro="Folosiți butonul de mai jos pentru a ne comunica participarea și eventualele intoleranțe alimentare.">
+            Usa il pulsante qui sotto per comunicarci la tua partecipazione e eventuali intolleranze alimentari.
+          </p>
 
-</div>
+          <a class="btn btn-primary" href="INSERISCI-QUI-IL-LINK-RSVP" target="_blank"
+             data-it="Apri il form RSVP" data-ro="Deschide formularul RSVP">
+             Apri il form RSVP
+          </a>
+        </div>
+      </div>
+    </section>
 
-<script>
+    <section id="info">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker" data-it="Dettagli" data-ro="Detalii">Dettagli</div>
+          <h2 class="section-title" data-it="Informazioni utili" data-ro="Informații utile">Informazioni utili</h2>
+        </div>
 
-function setLang(lang){
+        <div class="grid-3">
+          <div class="card">
+            <h3 data-it="Dress code" data-ro="Dress code">Dress code</h3>
+            <div class="info-list">
+              <div class="info-row">
+                <span>•</span>
+                <span data-it="Elegante" data-ro="Elegant">Elegante</span>
+              </div>
+              <div class="info-row">
+                <span>•</span>
+                <span data-it="Colori consigliati: toni neutri e pastello" data-ro="Culori recomandate: tonuri neutre și pastel">
+                  Colori consigliati: toni neutri e pastello
+                </span>
+              </div>
+            </div>
+          </div>
 
-document.querySelectorAll("[data-"+lang+"]").forEach(el=>{
-el.innerText = el.getAttribute("data-"+lang)
-})
+          <div class="card">
+            <h3 data-it="Parcheggio" data-ro="Parcare">Parcheggio</h3>
+            <div class="info-list">
+              <div class="info-row">
+                <span>•</span>
+                <span data-it="Parcheggio disponibile presso la location" data-ro="Parcare disponibilă la locație">
+                  Parcheggio disponibile presso la location
+                </span>
+              </div>
+              <div class="info-row">
+                <span>•</span>
+                <span data-it="Possibilità di taxi/NCC a fine serata" data-ro="Posibilitate de taxi/NCC la sfârșitul serii">
+                  Possibilità di taxi/NCC a fine serata
+                </span>
+              </div>
+            </div>
+          </div>
 
-}
+          <div class="card">
+            <h3 data-it="Allergie e intolleranze" data-ro="Alergii și intoleranțe">Allergie e intolleranze</h3>
+            <div class="info-list">
+              <div class="info-row">
+                <span>•</span>
+                <span data-it="Segnalatele nel form RSVP" data-ro="Vă rugăm să le menționați în formularul RSVP">
+                  Segnalatele nel form RSVP
+                </span>
+              </div>
+              <div class="info-row">
+                <span>•</span>
+                <span data-it="Faremo il possibile per venire incontro a tutti" data-ro="Vom face tot posibilul să ținem cont de toate">
+                  Faremo il possibile per venire incontro a tutti
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</script>
+    <section id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker" data-it="Ricordi" data-ro="Amintiri">Ricordi</div>
+          <h2 class="section-title" data-it="Qualche foto di noi" data-ro="Câteva fotografii cu noi">Qualche foto di noi</h2>
+        </div>
 
+        <div class="gallery">
+          <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=80" alt="Foto 1" />
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80" alt="Foto 2" />
+          <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80" alt="Foto 3" />
+        </div>
+      </div>
+    </section>
+
+    <section id="gift">
+      <div class="container">
+        <div class="card gift-box">
+          <div class="section-kicker" data-it="Lista nozze" data-ro="Cadou de nuntă">Lista nozze</div>
+          <h2 class="section-title" data-it="Un pensiero per noi" data-ro="Un gând pentru noi">Un pensiero per noi</h2>
+          <p class="section-text"
+            data-it="La vostra presenza sarà il regalo più bello. Per chi desidera farci un pensiero, qui potete inserire le informazioni della lista nozze o del regalo."
+            data-ro="Prezența voastră va fi cel mai frumos cadou. Pentru cei care doresc să ne ofere un dar, aici puteți adăuga informațiile despre lista de nuntă sau cadou.">
+            La vostra presenza sarà il regalo più bello. Per chi desidera farci un pensiero, qui potete inserire le informazioni della lista nozze o del regalo.
+          </p>
+
+          <div class="cta-row" style="justify-content:center; margin-top:20px;">
+            <a class="btn btn-secondary" href="#"
+               data-it="Inserisci qui il link" data-ro="Adaugă aici linkul">
+               Inserisci qui il link
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div data-it="Non vediamo l'ora di festeggiare con voi." data-ro="Abia așteptăm să sărbătorim împreună cu voi.">
+        Non vediamo l'ora di festeggiare con voi.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function setLang(lang, btn) {
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-" + lang + "]").forEach(el => {
+        el.textContent = el.getAttribute("data-" + lang);
+      });
+
+      document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
+      if (btn) btn.classList.add("active");
+    }
+
+    const weddingDate = new Date("2026-09-12T15:30:00");
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = weddingDate - now;
+
+      if (diff <= 0) {
+        document.getElementById("days").textContent = "0";
+        document.getElementById("hours").textContent = "0";
+        document.getElementById("minutes").textContent = "0";
+        document.getElementById("seconds").textContent = "0";
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
 </body>
 </html>
