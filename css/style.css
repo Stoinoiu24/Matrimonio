@@ -303,10 +303,10 @@ h1, h2, h3, h4, h5, h6, figure {
   width: 100%;
 }
 #fh5co-header {
-  background-image: url("../images/733_AdrianBirgauan.ro.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  background-image: url("../images/733_AdrianBirgauan.ro.jpg") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
 }
 @media screen and (max-width: 768px) {
   .fh5co-cover {
