@@ -302,6 +302,23 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
   width: 100%;
 }
+#fh5co-header {
+  background-image: url("../images/733_AdrianBirgauan.ro.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 768px) {
+  .fh5co-cover {
+    height: 600px;
+  }
+
+  #fh5co-header {
+    background-image: url("../images/733_AdrianBirgauan_mobile.jpg");
+    background-position: center center;
+  }
+}
+
 .fh5co-cover .overlay {
   z-index: 0;
   position: absolute;
