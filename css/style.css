@@ -1194,12 +1194,12 @@ form label {
   margin-bottom: 2em;
 }
 .fh5co-heading h2 {
-  font-size: 60px;
+  font-size: 80px;
   margin-bottom: 10px;
   line-height: 1.5;
   font-weight: bold;
-  color: #F14E95;
-  font-family: "Sacramento", Arial, serif;
+  color: #E5AD06;
+  font-family:  'Allura', cursive;
 }
 @media screen and (max-width: 768px) {
   .fh5co-heading h2 {
@@ -1886,4 +1886,85 @@ form label {
 }
 
 
+#fh5co-header .display-tc h1 {
+  font-family: 'Allura', cursive;
+  font-size: clamp(12rem, 8vw, 7rem);
+  line-height: 1;
+}
+
+@media screen and (max-width: 768px) {
+  #fh5co-header .display-tc h1 {
+    font-size: 7rem;
+  }
+}
+
+.welcome-box {
+  max-width: 850px;
+  margin: 30px auto 0;
+  padding: 35px 30px;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(241, 78, 149, 0.18);
+  border-radius: 22px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.welcome-box p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.9;
+  color: #4a4a4a;
+}
+
+@media screen and (max-width: 768px) {
+  .welcome-box {
+    padding: 25px 20px;
+    border-radius: 16px;
+  }
+
+  .welcome-box p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+}
+
+.map-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 24px;
+
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+
+  background: rgba(255, 255, 255, 0.15); /* trasparente */
+  border: 1px solid rgba(255, 255, 255, 0.6);
+
+  border-radius: 30px;
+
+  backdrop-filter: blur(6px); /* effetto vetro */
+  -webkit-backdrop-filter: blur(6px);
+
+  transition: 0.3s;
+}
+
+.map-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+
+.location-text-box {
+  text-align: left;
+}
+
+.location-text-box p {
+  line-height: 1.9;
+  margin-bottom: 0;
+}
+
+#fh5co-event .event-wrap {
+  min-height: 430px;
+}
 /*# sourceMappingURL=style.css.map */
