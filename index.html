@@ -103,7 +103,7 @@
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 							<h1>Aurora e Roberto</h1>
 							<h2 data-it="IL NOSTRO PER SEMPRE INIZIA QUI!" data-ro="DE AICI ÎNCEPE PENTRU TOTDEAUNA AL NOSTRU">IL NOSTRO PER SEMPRE INIZIA QUI!</h2>
-							<div class="simply-countdown simply-countdown-one"></div>
+							<div class="simply-countdown simply-countdown-one" id="countdown"></div>
 						</div>
 					</div>
 				</div>
@@ -111,7 +111,7 @@
 		</div>
 	</header>
 
-	<div id="fh5co-couple"> <!-- PROGRAMMA -->
+	<div id="fh5co-couple"> <!-- PRESENTAZIONE -->
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
@@ -146,13 +146,15 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<h2>Location</h2>
+					<h2 class="location-logo">
+						<img src="images/logo_transparent.png" alt="Villa Cavalli Logo">
+					  </h2>
 				</div>
 			</div>
 			<div class="row">
 				<div class="display-t">
 					<div class="display-tc"> <!---->
-						<<div class="col-md-12">
+						<div class="col-md-12">
 							<div class="col-md-5 col-sm-12 text-center">
 							  <div class="event-wrap animate-box">
 								<h3>Villa Cavalli Malandrin</h3>
@@ -176,7 +178,17 @@
 						  
 							<div class="col-md-7 col-sm-12 text-center">
 							  <div class="event-wrap animate-box location-text-box">
-								<p>
+								<p
+								data-it="Immersa nel suggestivo paesaggio dei Colli Euganei, Villa Cavalli è una splendida dimora storica che racconta secoli di storia e tradizione delle ville venete. Costruita in un contesto naturale di grande bellezza, la villa conserva ancora oggi il fascino elegante delle residenze nobiliari che un tempo caratterizzavano questo territorio.
+								Circondata da giardini e panorami collinari, offre un’atmosfera raffinata e senza tempo, dove storia e natura si incontrano armoniosamente.
+								Abbiamo scelto questo luogo speciale come cornice del nostro matrimonio perché rappresenta perfettamente ciò che desideriamo per questo giorno: un ambiente romantico, ricco di bellezza e di significato, dove condividere con voi momenti indimenticabili.
+								Tra queste mura cariche di storia e sotto il cielo dei Colli Euganei, celebreremo insieme l’inizio del nostro viaggio."
+								data-ro="Cufundată în farmecul peisajului din Dealurile Euganeene, Villa Cavalli este o reședință istorică deosebită, care poartă în sine ecoul secolelor de istorie și tradiție ale vilelor venețiene. Ridicată într-un cadru natural de o frumusețe rară, vila își păstrează și astăzi eleganța rafinată a reședințelor nobiliare ce defineau odinioară acest ținut.
+								Înconjurată de grădini și de priveliști line de deal, oferă o atmosferă atemporală și plină de grație, unde istoria și natura se împletesc în armonie.
+								Am ales acest loc deosebit ca decor al nunții noastre pentru că reflectă întru totul ceea ce ne dorim pentru această zi: un cadru romantic, încărcat de frumusețe și semnificație, în care să împărtășim alături de voi clipe de neuitat.
+								Între aceste ziduri pline de istorie și sub cerul Dealurilor Euganeene, vom celebra împreună începutul călătoriei noastre.
+								"
+								>
 								  Immersa nel suggestivo paesaggio dei Colli Euganei, Villa Cavalli è una splendida dimora storica che racconta secoli di storia e tradizione delle ville venete. Costruita in un contesto naturale di grande bellezza, la villa conserva ancora oggi il fascino elegante delle residenze nobiliari che un tempo caratterizzavano questo territorio.
 								  Circondata da giardini e panorami collinari, offre un’atmosfera raffinata e senza tempo, dove storia e natura si incontrano armoniosamente.
 								  Abbiamo scelto questo luogo speciale come cornice del nostro matrimonio perché rappresenta perfettamente ciò che desideriamo per questo giorno: un ambiente romantico, ricco di bellezza e di significato, dove condividere con voi momenti indimenticabili.
@@ -190,6 +202,111 @@
 			</div>
 		</div>
 	</div>
+
+	<div id="fh5co-couple-story"> <!-- TIMING -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+					<h2 data-it="Il giorno tanto atteso" data-ro="Ziua mult așteptată">Il giorno tanto atteso</h2>
+					<p data-it="Qui scoprirete tutti i momenti della giornata." 
+					data-ro="Aici puteți descoperi toate momentele zilei."
+					>Qui scoprirete tutti i momenti della giornata.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 col-md-offset-0">
+					<ul class="timeline animate-box">
+						<li class="animate-box">
+							<div class="timeline-badge" style="background-image:url(images/logo_villa.png);"></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title" data-it="Arrivo in vVlla" data-ro="Sosirea la Vilă">Arrivo in Villa</h3>
+									<span class="hour">11:15</span>
+								</div>
+								<div class="timeline-body">
+									<p data-it="All’arrivo in Villa, gli ospiti saranno accolti dai testimoni con un aperitivo di benvenuto." 
+										data-ro="La sosirea la Vilă, invitații vor fi întâmpinați de nași cu un aperitiv de bun venit."
+									>All’arrivo in villa, gli ospiti saranno accolti dai testimoni con un aperitivo di benvenuto.</p>
+								</div>
+							</div>
+						</li>
+						<li class="timeline-inverted animate-box">
+							<div class="timeline-badge" style="background-image:url(images/cerimonia.png);"></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title" data-it="Cerimonia" data-ro="Ceremonia">Cerimonia</h3>
+									<span class="hour">12:00</span>
+								</div>
+								<div class="timeline-body">
+									<p data-it="Celebrazione del nostro matrimonio nel suggestivo scenario della villa."
+										data-ro="Celebrerea căsătoriei noastre în cadrul fermecător al vilei."
+									>Celebrazione del nostro matrimonio nel suggestivo scenario della villa.</p>
+								</div>
+							</div>
+						</li>
+						<li class="animate-box">
+							<div class="timeline-badge" style="background-image:url(images/buffet.png);"></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title" data-it="Buffet di aperitivo" data-ro="Bufet de aperitive">Buffet di aperitivo</h3>
+									<span class="hour">13:00</span>
+								</div>
+								<div class="timeline-body">
+									<p data-it="Un ricco buffet di aperitivo ad isole, tra sapori e profumi da gustare in libertà."
+									data-ro="Un bufet de aperitive organizat pe insule, cu diverse specialități de descoperit și savurat în voie."
+									>Un ricco buffet di aperitivo ad isole, tra sapori e profumi da gustare in libertà.</p>
+								</div>
+							</div>
+						</li>
+						<li class="timeline-inverted animate-box">
+							<div class="timeline-badge" style="background-image:url(images/ricevimento.png);"></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title" data-it="Ricevimento" data-ro="Prânz">Ricevimento</h3>
+									<span class="hour">15:30</span>
+								</div>
+								<div class="timeline-body">
+									<p data-it="Un prânz elegant, servit la masă, alături de momente de bucurie și voie bună."
+										data-ro="Ricevimento nuziale con servizio al tavolo, accompagnato da momenti di convivialità e festa.”"
+									>Ricevimento nuziale con servizio al tavolo, accompagnato da momenti di convivialità e festa.</p>
+								</div>
+							</div>
+						</li>
+						<li class="animate-box">
+							<div class="timeline-badge" style="background-image:url(images/taglio_torta.png);"></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title" data-it="Taglio della torta" data-ro="Bufet de aperitive">Taglio della torta</h3>
+									<span class="hour">18:00</span>
+								</div>
+								<div class="timeline-body">
+									<p data-it="Il nostro taglio della torta, tra emozioni e brindisi."
+									data-ro="Tăierea tortului nostru, un moment plin de emoții și urări."
+									>Il nostro taglio della torta, tra emozioni e brindisi.</p>
+								</div>
+							</div>
+						</li>
+						<li class="timeline-inverted animate-box">
+							<div class="timeline-badge" style="background-image:url(images/festa.png);"></div>
+							<div class="timeline-panel">
+								<div class="timeline-heading">
+									<h3 class="timeline-title" data-it="Festa" data-ro="Petrecere">Festa</h3>
+									<span class="hour" data-it="A seguire" data-ro="În continuare">A seguire</span>
+								</div>
+								<div class="timeline-body">
+									<p data-it="La festa prosegue con l’apertura dell’open bar e un buffet serale di apericena, tra musica, brindisi e momenti di divertimento."
+										data-ro="Petrecerea continuă cu deschiderea open barului și un bufet seral de apericină, cu muzică și momente de distracție.”"
+									>La festa prosegue con l’apertura dell’open bar e un buffet serale di apericena, tra musica, brindisi e momenti di divertimento.</p>
+								</div>
+							</div>
+						</li>
+			    	</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 
 	<div id="fh5co-couple-story"> <!-- LA NOSTRA STORIA -->
 		<div class="container">
@@ -636,35 +753,68 @@
 	<script src="js/main.js"></script>
 
 	<script>
-	function setLang(lang, btn) {
-    document.documentElement.lang = lang;
+		function setLang(lang, btn) {
+		document.documentElement.lang = lang;
 
-    document.querySelectorAll("[data-it][data-ro]").forEach(el => {
-      el.innerHTML = el.getAttribute("data-" + lang);
-    });
+		document.querySelectorAll("[data-it][data-ro]").forEach(el => {
+			el.innerHTML = el.getAttribute("data-" + lang);
+		});
 
-    document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
-    if (btn) btn.classList.add("active");
-  	}
+		document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
+		if (btn) btn.classList.add("active");
+		}
 
+		const target = new Date("2027-05-08T11:15:00").getTime();
 
-    var d = new Date("2027-05-08T11:15:00");
+	
 
-    // default example
-    simplyCountdown('.simply-countdown-one', {
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate()
-    });
+		function updateCountdown() {
+			const now = new Date().getTime();
+			const diff = target - now;
+			const countdownEl = document.getElementById("countdown");
 
-    //jQuery example
-    $('#simply-countdown-losange').simplyCountdown({
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate(),
-        enableUtc: false
-    });
-</script>
+			if (!countdownEl) return;
+
+			if (diff <= 0) {
+				countdownEl.innerHTML = '<div class="simply-section"><div><span class="simply-amount">0</span><span class="simply-word">tempo scaduto</span></div></div>';
+				return;
+			}
+
+			const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+			const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+			const minutes = Math.floor((diff / (1000 * 60)) % 60);
+			const seconds = Math.floor((diff / 1000) % 60);
+
+			countdownEl.innerHTML =
+				'<div class="simply-section">' +
+					'<div>' +
+						'<span class="simply-amount">' + days + '</span>' +
+						'<span class="simply-word">giorni</span>' +
+					'</div>' +
+				'</div>' +
+				'<div class="simply-section">' +
+					'<div>' +
+						'<span class="simply-amount">' + hours + '</span>' +
+						'<span class="simply-word">ore</span>' +
+					'</div>' +
+				'</div>' +
+				'<div class="simply-section">' +
+					'<div>' +
+						'<span class="simply-amount">' + minutes + '</span>' +
+						'<span class="simply-word">minuti</span>' +
+					'</div>' +
+				'</div>' +
+				'<div class="simply-section">' +
+					'<div>' +
+						'<span class="simply-amount">' + seconds + '</span>' +
+						'<span class="simply-word">secondi</span>' +
+					'</div>' +
+				'</div>';
+		}
+
+		updateCountdown();
+		setInterval(updateCountdown, 1000);   
+	</script>
 
 	</body>
 </html>
